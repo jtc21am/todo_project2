@@ -58,7 +58,7 @@ Run the following commands:
 
 ### _Running the Application_ ###
 
-Navigate to the `nyc-guide` directory.
+Navigate to the `todo_project2` directory.
 
 Run the following commmand:
 
