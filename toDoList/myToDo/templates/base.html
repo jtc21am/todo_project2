@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'static/style.css' %}"
+    />
+    <style>
+      body {
+      background-color: #64bcc7;
+      }
+      </style>
+
+    <title>My To Do List</title>
+    {% load static %}
+
+  </head>
+  <body>
+
+    <h1>To Do List Part Two</h1>
+    {% block content %}
+    <!-- Block Content -->
+    {% endblock %}
+  </body>
+</html>
+

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <form action="/" method="post">
+   {% csrf_token %}
+   <input type="text" name="content" placeholder="To Do Task" required/>
+   <br/>
+
+   <fieldset>
+     <legend>Tags</legend>
+     <br/>
+         <input type="checkbox" id="Urgent" name="Urgent" value="1">
+         <label for="Urgent">Urgent</label><br/>
+
+         <input type="checkbox" id="Personal" name="Personal" value="2">
+         <label for="Personal">Personal</label><br/>
+
+         <input type="checkbox" id="Work" name="Work" value="3">
+         <label for="Work">Work</label><br/>
+
+         <input type="checkbox" id="Other" name="Other" value="4">
+         <label for="Other">Other</label><br/>
+
+         <input type="checkbox" id="None" name="None" value="None">
+         <label for="None">None</label><br/>
+   </fieldset>
+
+   <input type="submit" name="add" />
+
+
+ </form>
+
+ <hr />
+
+ <!-- LIST OF INCOMPLETED -->
+
+ <h2>Tasks: Still Incomplete</h2>
+ <ol>
+   {% for item in incompleted %}
+   <li>
+
+     <a href={% url 'task' item.id %}> {{item}} </a>
+
+   </li>
+   {% endfor %}
+ </ol>
+
+ <!-- LIST OF COMPLETED -->
+ <h2>Tasks: Completed</h2>
+
+ <ol>
+   {% for item in completed %}
+   <li>
+     <a href={% url 'task' item.id %}> {{item}} </a>
+   </li>
+   {% endfor %}
+ </ol>
+
+ {% endblock %}
+
